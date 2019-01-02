@@ -1,0 +1,59 @@
+@layout('layouts/empty')
+
+@section('title')
+ExpectCompany - Login
+@endsection
+
+@section('current-class')
+  auth-page
+@endsection
+
+@section('custom-style-app-container')
+
+@endsection
+
+@section('content')
+  <div class="auth-form">
+    <h1>ExpectCompany</h1>
+   <form class="default-form" action="/login" method="POST">
+     {{ csrfField() }}
+     <div class="error-box
+     @if(hasErrorFor('email') || hasErrorFor('password'))
+      active
+     @endif
+     ">
+     @if(hasErrorFor('email'))
+      {{getErrorFor('email')}}
+     @endif
+     @if(hasErrorFor('password'))
+      {{getErrorFor('password')}}
+     @endif
+     </div>
+     <div class="form-group">
+       <label for="email">Email</label>
+       <input type="email" name="email" value="{{ old('email', '') }}" class="text
+       @if(hasErrorFor('email'))
+        errors
+       @endif
+       ">
+     </div>
+     <div class="form-group">
+       <label for="password">Password</label>
+       <input type="password" name="password" class="text
+       @if(hasErrorFor('email'))
+        errors
+       @endif
+       ">
+     </div>
+     <div class="form-group">
+       <button type="submit" name="button">Login</button>
+     </div>
+     <hr>
+     <a href="/register" class="register-btn">Register</a>
+     <a href="/forgot-password">Forgot password?</a>
+   </form>
+  </div>
+<div class="side-image">
+
+</div>
+@endsection

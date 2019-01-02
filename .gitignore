@@ -1,0 +1,32 @@
+# Node modules
+node_modules
+package-lock.json
+
+# Adonis directory for storing tmp files
+tmp
+
+# Environment variables, never commit this file
+.env
+
+# The development sqlite file
+database/development.sqlite
+
+node_modules/
+
+*.DS_Store
+
+package-lock.json
+
+config.js
+
+node_modules
+
+atom-package-list.txt
+
+renamethisfile.txt
+
+node-sass
+
+.env
+
+yarn.lock

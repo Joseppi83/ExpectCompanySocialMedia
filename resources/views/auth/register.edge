@@ -1,0 +1,69 @@
+@layout('layouts/empty')
+
+@section('title')
+ExpectCompany - Register
+@endsection
+
+@section('current-class')
+  auth-page
+@endsection
+
+@section('custom-style-app-container')
+
+@endsection
+
+@section('content')
+  <div class="auth-form">
+    <h1>ExpectCompany</h1>
+   <form class="default-form" action="/register" method="POST">
+     {{csrfField()}}
+     <div class="error-box
+     @if(hasErrorFor('email') || hasErrorFor('password'))
+      active
+     @endif
+     ">
+     @if(hasErrorFor('email'))
+      {{getErrorFor('email')}}
+     @endif
+     @if(hasErrorFor('password'))
+      {{getErrorFor('password')}}
+     @endif
+     @if(hasErrorFor('database'))
+      {{getErrorFor('database')}}
+     @endif
+     </div>
+     <div class="form-group">
+       <label for="email">Email</label>
+       <input type="text" name="email" value="{{ old('email', '') }}"" class="text
+       @if(hasErrorFor('email'))
+        error
+       @endif
+       ">
+     </div>
+     <div class="form-group">
+       <label for="password">Password</label>
+       <input type="password" name="password" class="text
+       @if(hasErrorFor('password'))
+        error
+       @endif
+       ">
+     </div>
+     <div class="form-group">
+       <label for="confirm_password">Confirm Password</label>
+       <input type="password" name="confirm_password" class="text
+       @if(hasErrorFor('confirm_password'))
+        error
+       @endif
+       ">
+     </div>
+     <div class="form-group">
+       <button type="submit" name="button">Register</button>
+     </div>
+     <hr>
+     <a href="/login">Back to login</a>
+   </form>
+  </div>
+<div class="side-image">
+
+</div>
+@endsection

@@ -1,0 +1,68 @@
+.auth-page{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .auth-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1{
+      font-family: $cursive;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    hr{
+      height: 1px;
+      background: #1b1b1b;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    a{
+      text-decoration: none;
+      color: blue;
+      text-transform: uppercase;
+      text-align: center;
+      display: block;
+      font-weight: 400;
+    }
+
+    form{
+      min-width: 350px;
+      max-width: 400px;
+    }
+
+    .register-btn{
+      cursor: pointer;
+      width: 100%;
+      min-width: 200px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      border-radius: 4px;
+      padding: 10px 0;
+      color: black;
+      border: 1px solid #1b1b1b;
+      background: #a7f442;
+      text-decoration: none;
+      transition: all .3s ease-in-out;
+      margin-bottom: 1rem;
+      &:hover{
+        background: black;
+        color: white;
+      }
+    }
+  }
+
+  .side-image{
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    height: 100%;
+  }
+}

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Galada|Roboto:100,300,400,400i,500,500i,700,900');
+@import "reset";
+@import "variables";
+@import "pages/welcome.scss";
+@import "pages/home.scss";
+@import "pages/profile.scss";
+@import "auth/auth.scss";
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  // background: rgba(0,0,0,1);
+  // background: -moz-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(19,66,14,1) 100%);
+  // background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(19,66,14,1)));
+  // background: -webkit-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(19,66,14,1) 100%);
+  // background: -o-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(19,66,14,1) 100%);
+  // background: -ms-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(19,66,14,1) 100%);
+  // background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(19,66,14,1) 100%);
+  background: #000000; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #000000 15%, #124900 92%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #000000 15%,#124900 92%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #000000 15%,#124900 92%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+
+#app{
+  width: 100%;
+
+}
+
+.app-container{
+  width: 80%;
+  max-width: 1400px;
+  background: white;
+  min-height: calc(100vh - 15vh);
+  // height: 80vh;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+
+
+button:focus, input:focus, select:focus, textarea:focus{
+  outline: none;
+}
+
+label{
+  font-size: .8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+input[type="text"], input.text{
+  background: $textfield;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 5px 15px;
+  margin-bottom: 1rem;
+}
+
+textarea{
+  background: $textfield;
+  width: 100%;
+  height: 75px;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+}
+
+.default-form{
+
+  .error-box{
+    display: none;
+    background: $red;
+    color: white;
+    padding: 15px;
+    margin-bottom: 1rem;
+
+
+    &.active{
+      display: block;
+    }
+  }
+
+  .form-group{
+    &  > .error{
+      border: 1px solid red;
+    }
+  }
+
+  button{
+    cursor: pointer;
+    width: 100%;
+    min-width: 200px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    border-radius: 4px;
+    padding: 10px 0;
+    color: white;
+    background: rgba(1,120,255,1);
+    background: -moz-linear-gradient(-45deg, rgba(1,120,255,1) 0%, rgba(50,173,255,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(1,120,255,1)), color-stop(100%, rgba(50,173,255,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(1,120,255,1) 0%, rgba(50,173,255,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(1,120,255,1) 0%, rgba(50,173,255,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(1,120,255,1) 0%, rgba(50,173,255,1) 100%);
+    background: linear-gradient(135deg, rgba(1,120,255,1) 0%, rgba(50,173,255,1) 100%);
+  }
+}
+
+.notifications{
+  display: none;
+  &.welcome{
+    background: #a7f442;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    opacity: .7;
+    z-index: 5;
+  }
+  &.active{
+    display: block;
+    opacity: 0;
+    animation: fade 10s linear;
+  }
+}
+
+@keyframes fade {
+0%,100% { opacity: 0 }
+50% { opacity: 0.7 }
+}
